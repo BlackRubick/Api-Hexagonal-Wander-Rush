@@ -2,10 +2,12 @@ import jwt
 from fastapi import Request, HTTPException, Depends
 from fastapi.security import OAuth2PasswordBearer
 from starlette.status import HTTP_401_UNAUTHORIZED
-from jose import JWTError, jwt  # Asegúrate de que JWTError esté importado correctamente
+from jose import JWTError, jwt
 from core.utils.security import Security
 
 security = Security()
+#con esto controlamos la cantidad de peticiones
+
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 

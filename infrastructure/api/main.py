@@ -3,14 +3,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import JSONResponse
 from infrastructure.db.database import engine, Base
 from core.models.user import User
-from core.routes import user_routes  # Asegúrate de que `user_routes` está bien importado
+from core.routes import user_routes
 
 app = FastAPI()
 
 # Configuración de CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Cambiar esto según el dominio permitido en producción
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
